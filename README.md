@@ -60,3 +60,17 @@ Sign the server certificate:
 Verify the server certificate:
 
 `openssl x509 -noout -text -in ./certs/server.cert.pem`
+
+### Generate the private key and signed certificate for the client
+
+Private key:
+ `openssl genrsa -out ./private/client.key.pem`
+
+Certificate signing request:
+
+`openssl req -config openssl.cnf -key client/client.key.pem -new -sha256 -out
+client/client.csr.pem`
+
+Sign the client certificate:
+
+`openssl ca -config openssl.cnf -extensions usr cert -days 375 -notext -md sha256 -in client/client.csr.pem -out client/client.cert.pem`
