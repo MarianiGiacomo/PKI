@@ -43,7 +43,7 @@ Create the `private/`, `certs/`, and `newcerts` folders if they are not present 
 ### Verify the root CA certificate
 `openssl x509 -noout -text -in ./cacert.pem`
 
-### Generate the private key and signed certificate for a server
+## Generate the private key and signed certificate for a server
 
 Private key:
 
@@ -61,7 +61,7 @@ Verify the server certificate:
 
 `openssl x509 -noout -text -in ./certs/server.cert.pem`
 
-### Generate the private key and signed certificate for the client
+## Generate the private key and signed certificate for the client
 
 Private key:
  `openssl genrsa -out ./private/client.key.pem`
